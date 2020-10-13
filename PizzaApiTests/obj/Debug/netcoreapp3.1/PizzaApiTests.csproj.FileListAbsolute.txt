@@ -1,0 +1,4 @@
+/Users/rodolfo/Projects/PizzaApi/PizzaApiTests/obj/Debug/netcoreapp3.1/PizzaApiTests.csprojAssemblyReference.cache
+/Users/rodolfo/Projects/PizzaApi/PizzaApiTests/obj/Debug/netcoreapp3.1/PizzaApiTests.AssemblyInfoInputs.cache
+/Users/rodolfo/Projects/PizzaApi/PizzaApiTests/obj/Debug/netcoreapp3.1/PizzaApiTests.AssemblyInfo.cs
+/Users/rodolfo/Projects/PizzaApi/PizzaApiTests/obj/Debug/netcoreapp3.1/PizzaApiTests.csproj.CoreCompileInputs.cache
