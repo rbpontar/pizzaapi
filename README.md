@@ -9,8 +9,8 @@
 
 # Envio do Pedido
 ## url: /api/pedido/ 
-## método: POST
-## descrição: Endpoint para envio dos pedidos
+## Método: POST
+## Descrição: Endpoint para envio dos pedidos
 ## json com usuário sem dados de entrega:
 {
    "itens":[
@@ -101,8 +101,8 @@
 
 # Consulta de Pedido Por Id do Pedido
 ## url: /api/pedido/{id} 
-## método: GET
-## descrição: Endpoint para connsulta de pedido específico 
+## Método: GET
+## Descrição: Endpoint para connsulta de pedido específico 
 # Resposta
 {
     "id": 1,
@@ -136,8 +136,8 @@
 
 # Consulta de Pedido Por Id do Usuário
 ## url: /api/pedido/usuario/{id} 
-## método: GET
-## descrição: Endpoint para connsulta dos pedidos do usuário 
+## Método: GET
+## Descrição: Endpoint para connsulta dos pedidos do usuário 
 # Resposta
 [
     {
@@ -174,8 +174,8 @@
 
 # Cadastro de Usuário
 ## url: /api/usuario/ 
-## método: POST
-## descrição: Endpoint para cadastrar novos usuários 
+## Método: POST
+## Descrição: Endpoint para cadastrar novos usuários 
 ## json:
 {
    "nome":"Amanda",
@@ -201,8 +201,8 @@
 
 # Buscar de Usuário por Id do Usuário
 ## url: /api/usuario/{id} 
-## método: GET
-## descrição: Endpoint buscar usuário específico 
+## Método: GET
+## Descrição: Endpoint buscar usuário específico 
 # Resposta
 {
     "id": 1,
@@ -219,8 +219,8 @@
 
 # Cadastro de Produtos
 ## url: /api/produto/ 
-## método: POST
-## descrição: Endpoint para cadastrar novos usuários 
+## Método: POST
+## Descrição: Endpoint para cadastrar novos usuários 
 ## json:
 {
    "nome":"Portuguesa",
@@ -236,8 +236,8 @@
 
 # Listar Todos os Produtos 
 ## url: /api/produto
-## método: GET
-## descrição: Endpoint listar todos os produtos  
+## Método: GET
+## Descrição: Endpoint listar todos os produtos  
 # Resposta
 [
     {
