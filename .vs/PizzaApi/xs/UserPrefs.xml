@@ -10,7 +10,7 @@
       <File FileName="PizzaApi/Controllers/UsuarioController.cs" Line="38" Column="1" />
       <File FileName="PizzaApi/Dtos/ProdutoDto.cs" Line="4" Column="18" />
       <File FileName="PizzaApi/Repositories/PedidoRepo.cs" Line="32" Column="14" />
-      <File FileName="PizzaApi/Controllers/ProdutoController.cs" Line="13" Column="6" />
+      <File FileName="PizzaApi/Controllers/ProdutoController.cs" Line="27" Column="62" />
       <File FileName="PizzaApi/Services/ProdutoService.cs" Line="51" Column="34" />
       <File FileName="PizzaApi/Models/Produto.cs" Line="12" Column="1" />
     </Files>
@@ -18,16 +18,7 @@
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="PizzaApi" expanded="True">
-            <Node name="PizzaApi" expanded="True">
-              <Node name="Controllers" expanded="True">
-                <Node name="ProdutoController.cs" selected="True" />
-              </Node>
-              <Node name="Dtos" expanded="True" />
-              <Node name="Models" expanded="True" />
-              <Node name="Repositories" expanded="True" />
-              <Node name="Services" expanded="True" />
-            </Node>
-            <Node name="PizzaApiNUnitTest" expanded="True" />
+            <Node name="PizzaApi" expanded="True" />
           </Node>
         </State>
       </Pad>
