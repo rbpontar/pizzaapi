@@ -12,7 +12,6 @@ namespace PizzaApi.Models
         public int Id { get; set; }
         public DateTime Data { get; set; }
         public double Valor { get; set; }
-        public string Observacao { get; set; }
         public virtual List<ItemPedido> Itens { get; set; }
 
         //[Column("idusuariosolicitante"), Required]
@@ -43,9 +42,6 @@ namespace PizzaApi.Models
 
             if (endereco == null)
                 throw new Exception("Informar os dados da entrega.");
-
-
         }
-
     }
 }

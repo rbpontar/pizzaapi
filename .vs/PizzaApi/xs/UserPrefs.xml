@@ -4,14 +4,13 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="PizzaApi/Controllers/ProdutoController.cs">
     <Files>
       <File FileName="PizzaApiNUnitTest/UnitTest1.cs" Line="137" Column="1" IsPinned="True" />
-      <File FileName="PizzaApi/Controllers/PedidoController.cs" Line="48" Column="47" />
+      <File FileName="PizzaApi/Controllers/PedidoController.cs" Line="44" Column="55" />
       <File FileName="PizzaApi/Program.cs" Line="12" Column="2" />
-      <File FileName="PizzaApi/Services/PedidoService.cs" Line="32" Column="55" />
-      <File FileName="PizzaApi/Models/Pedido.cs" Line="12" Column="1" />
-      <File FileName="PizzaApi/Controllers/UsuarioController.cs" Line="30" Column="22" />
+      <File FileName="PizzaApi/Services/PedidoService.cs" Line="25" Column="10" />
+      <File FileName="PizzaApi/Controllers/UsuarioController.cs" Line="38" Column="1" />
       <File FileName="PizzaApi/Dtos/ProdutoDto.cs" Line="4" Column="18" />
       <File FileName="PizzaApi/Repositories/PedidoRepo.cs" Line="32" Column="14" />
-      <File FileName="PizzaApi/Controllers/ProdutoController.cs" Line="46" Column="33" />
+      <File FileName="PizzaApi/Controllers/ProdutoController.cs" Line="13" Column="6" />
       <File FileName="PizzaApi/Services/ProdutoService.cs" Line="51" Column="34" />
       <File FileName="PizzaApi/Models/Produto.cs" Line="12" Column="1" />
     </Files>
