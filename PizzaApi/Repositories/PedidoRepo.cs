@@ -22,6 +22,15 @@ namespace PizzaApi.Repositories
                 .Where(p => p.IdUsuario == idUsuario)
                 .ToListAsync();
 
+            foreach (Pedido pedido in pedidos)
+            {
+                foreach (ItemPedido item in pedido.Itens)
+                {
+                    item.Produto1 = await _contexto.Produtos.Where(p => p.Id == item.IdProduto1).SingleOrDefaultAsync();
+                    item.Produto2 = await _contexto.Produtos.Where(p => p.Id == item.IdProduto2).SingleOrDefaultAsync();
+                }
+            }
+
             return pedidos;
         }
 

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using PizzaApi.Dtos;
 using PizzaApi.Models;
 using PizzaApi.Services;
 
@@ -8,7 +9,7 @@ namespace PizzaApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UsuarioController
+    public class UsuarioController : ControllerBase
     {
         private UsuarioService usuarioService;
 
@@ -18,35 +19,51 @@ namespace PizzaApi.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Salvar(Usuario usuario)
+        public async Task<IActionResult> Salvar(UsuarioDto usuarioDto)
         {
-            usuario = await usuarioService.Gravar(usuario);
-            return new JsonResult(usuario);
-        }
+            try
+            {
+                var usuario = new Usuario
+                {
+                    Nome = usuarioDto.Nome,
+                    Endereco = new Endereco
+                    {
+                        Logradouro = usuarioDto.Endereco.Logradouro,
+                        Numero = usuarioDto.Endereco.Numero,
+                        Complemento = usuarioDto.Endereco.Complemento
+                    }
+                };
 
+                usuario = await usuarioService.Gravar(usuario);
+
+                return new JsonResult(usuario);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(new
+                {
+                    e.Message
+                });
+
+            }
+        }
 
         [HttpGet("{IdUsuario}")]
         public async Task<IActionResult> BuscarPorId(int IdUsuario)
         {
-            //Endereco endereco = new Endereco
-            //{
-            //    Logradouro = "Rua da Lapa ",
-            //    Complemento = "apto 109",
-            //    Numero = "300"
-            //};
+            try
+            {
+                var usuario = await usuarioService.BuscarPorId(IdUsuario);
 
-
-            //await usuarioService.Gravar(new Usuario
-            //{
-            //    Nome = "Rodolfo",
-            //    Endereco = endereco,
-            //    Login = "rodolfo",
-            //    Senha = "1234"
-            //});
-
-            var usuarios = await usuarioService.Listar();
-
-            return new JsonResult(usuarios);
+                return new JsonResult(usuario);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(new
+                {
+                    e.Message
+                });
+            }
         }
 
     }

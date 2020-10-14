@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using PizzaApi.Dtos;
 using PizzaApi.Models;
 using PizzaApi.Services;
 
@@ -8,7 +9,7 @@ namespace PizzaApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ProdutoController
+    public class ProdutoController : ControllerBase
     {
         private ProdutoService produtoService;
 
@@ -19,18 +20,37 @@ namespace PizzaApi.Controllers
 
 
         [HttpGet]
-        public async Task<IActionResult> GetByUsuario(int IdUsuario)
+        public async Task<IActionResult> Listar()
         {
-            await produtoService.Gravar(new Produto("3 Queijos", 50));
-            await produtoService.Gravar(new Produto("Frango com requeijão", 59.99));
-            await produtoService.Gravar(new Produto("Mussarela", 42.50));
-            await produtoService.Gravar(new Produto("Calabresa", 42.50));
-            await produtoService.Gravar(new Produto("Pepperoni", 55));
-            await produtoService.Gravar(new Produto("Veggie", 59.99));
+            try
+            {
+                var produtos = await produtoService.Listar();
 
-            var pedidos = await produtoService.Listar();
+                return new JsonResult(produtos);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { ex.Message });
+            }
+        }
 
-            return new JsonResult(pedidos);
+        [HttpPost]
+        public async Task<IActionResult> Salvar([FromBody] ProdutoDto produtoDto)
+        {
+            try
+            {
+                var produto = await produtoService.Gravar(new Produto
+                {
+                    Nome = produtoDto.Nome,
+                    Valor = produtoDto.Valor
+                });
+
+                return new JsonResult(produto);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { ex.Message });
+            }
         }
 
     }

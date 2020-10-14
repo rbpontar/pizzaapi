@@ -8,5 +8,10 @@ namespace PizzaApi.Dtos
         public int? IdUsuario { get; set; }
         public EnderecoDto enderecoDto { get; set; }
         public List<ItemPedidoDto> Itens { get; set; }
+
+        public PedidoDto()
+        {
+            Itens = new List<ItemPedidoDto>();
+        }
     }
 }

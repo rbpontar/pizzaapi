@@ -11807,11 +11807,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/rodolfo/Projects/PizzaApi/PizzaApi/PizzaApi.csproj",
+      "projectUniqueName": "/Users/rodolfo/_sandbox/pizzaapi/PizzaApi/PizzaApi.csproj",
       "projectName": "PizzaApi",
-      "projectPath": "/Users/rodolfo/Projects/PizzaApi/PizzaApi/PizzaApi.csproj",
+      "projectPath": "/Users/rodolfo/_sandbox/pizzaapi/PizzaApi/PizzaApi.csproj",
       "packagesPath": "/Users/rodolfo/.nuget/packages/",
-      "outputPath": "/Users/rodolfo/Projects/PizzaApi/PizzaApi/obj/",
+      "outputPath": "/Users/rodolfo/_sandbox/pizzaapi/PizzaApi/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"

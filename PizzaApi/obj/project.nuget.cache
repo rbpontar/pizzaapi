@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "BAa0NraC5W8cnU4/rA+VNz3OMe8zyJ9Q7Q4MkUbIoUJ9ElSoGfyoE/h/HknqUEdlW08jD4F2dFIEF9M5m2GdLA==",
+  "dgSpecHash": "xJMdhzm7F9jhX+OqFYC4iNtyW2WQ0RIeZqHXVhYWkjhHJV3TMoNmqUIu5C6VSDgnVgVmifH+f2WOT22pMrveBw==",
   "success": true,
-  "projectFilePath": "/Users/rodolfo/Projects/PizzaApi/PizzaApi/PizzaApi.csproj",
+  "projectFilePath": "/Users/rodolfo/_sandbox/pizzaapi/PizzaApi/PizzaApi.csproj",
   "expectedPackageFiles": [
     "/usr/local/share/dotnet/sdk/NuGetFallbackFolder/microsoft.aspnet.webapi.client/5.2.6/microsoft.aspnet.webapi.client.5.2.6.nupkg.sha512",
     "/usr/local/share/dotnet/sdk/NuGetFallbackFolder/microsoft.aspnetcore/2.1.1/microsoft.aspnetcore.2.1.1.nupkg.sha512",

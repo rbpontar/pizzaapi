@@ -25,7 +25,7 @@ namespace PizzaApi.Services
         {
         }
 
-        public async Task<List<Pedido>> ListarPedidosUsuario(int IdUsuario)
+        public async Task<List<Pedido>> BuscarPedidosUsuario(int IdUsuario)
         {
             try
             {
@@ -37,7 +37,7 @@ namespace PizzaApi.Services
             }
         }
 
-        public async Task<Pedido> GetById(int Id)
+        public async Task<Pedido> BuscarPorId(int Id)
         {
             try
             {
@@ -73,7 +73,7 @@ namespace PizzaApi.Services
                         IdProduto2 = item.IdProduto2,
                     };
 
-                    itens.Add(itemPedido);
+                    pedido.Itens.Add(itemPedido);
                 }
 
                 if (pedidoDto.IdUsuario.HasValue)
@@ -96,7 +96,7 @@ namespace PizzaApi.Services
                         Numero = pedidoDto.enderecoDto.Numero
                     };
 
-                pedido.Itens.AddRange(itens);
+                //pedido.Itens.AddRange(itens);
 
                 pedido.IsValid();
 

@@ -31,7 +31,7 @@ namespace PizzaApi.Services
             }
         }
 
-        public async Task<Usuario> GetById(int Id)
+        public async Task<Usuario> BuscarPorId(int Id)
         {
             try
             {

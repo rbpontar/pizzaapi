@@ -15,60 +15,25 @@ namespace PizzaApi.Controllers
     public class PedidoController : ControllerBase
     {
         private PedidoService pedidoService;
-        private ProdutoService produtoService;
 
-        public PedidoController(PedidoService pedidoService, ProdutoService produtoService)
+        public PedidoController(PedidoService pedidoService)
         {
             this.pedidoService = pedidoService;
-            this.produtoService = produtoService;
         }
 
-        [HttpGet("index")]
-        public async Task<IActionResult> BuscarPorUsuario(int IdUsuario)
+        [HttpGet("usuario/{id}")]
+        public async Task<IActionResult> BuscarPorUsuario(int id)
         {
+            try
+            {
+                var pedidos = await pedidoService.BuscarPedidosUsuario(id);
 
-            //await produtoService.Gravar(new Produto("3 Queijos", 50));
-            //await produtoService.Gravar(new Produto("Frango com requeijão", 59.99));
-            //await produtoService.Gravar(new Produto("Mussarela", 42.50));
-            //await produtoService.Gravar(new Produto("Calabresa", 42.50));
-            //await produtoService.Gravar(new Produto("Pepperoni", 55));
-            //await produtoService.Gravar(new Produto("Veggie", 59.99));
-
-            //List<ItemPedido> itens = new List<ItemPedido>();
-
-            //itens.Add(new ItemPedido()
-            //{
-            //    IdProduto1 = 1,
-            //    IdProduto2 = 1
-
-            //});
-
-            //itens.Add(new ItemPedido()
-            //{
-            //    IdProduto1 = 2,
-            //    IdProduto2 = 3
-            //});
-
-            //var pedido = new Pedido
-            //{
-            //    Nome = "Pedido 1",
-            //    Itens = itens
-            //};
-
-            //Endereco endereco = new Endereco
-            //{
-            //    Logradouro = "Rua da Lapa ",
-            //    Complemento = "apto 109",
-            //    Numero = "300"
-            //};
-
-            //pedido.Endereco = endereco;
-
-            //await pedidoService.Gravar(pedido);
-
-            var pedidos = await pedidoService.ListarPedidosUsuario(IdUsuario);
-
-            return new JsonResult(pedidos);
+                return new JsonResult(pedidos);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { ex.Message });
+            }
         }
 
         [HttpGet("{id}")]
@@ -76,7 +41,7 @@ namespace PizzaApi.Controllers
         {
             try
             {
-                var pedido = await pedidoService.GetById(id);
+                var pedido = await pedidoService.BuscarPorId(id);
 
                 return new JsonResult(pedido);
             }
@@ -86,17 +51,15 @@ namespace PizzaApi.Controllers
             }
         }
 
-        [HttpPost("enviar")]
-        public async Task<IActionResult> Enviar([FromBody] PedidoDto pedido)
+        //[HttpPost("enviar")]
+        [HttpPost]
+        public async Task<IActionResult> Enviar([FromBody] PedidoDto pedidoDto)
         {
             try
             {
-                var result = await pedidoService.Gravar(pedido);
+                var pedido = await pedidoService.Gravar(pedidoDto);
 
-                return Ok(new
-                {
-                    result
-                });
+                return new JsonResult(pedido);
             }
             catch (Exception ex)
             {
