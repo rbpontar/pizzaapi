@@ -51,7 +51,6 @@ namespace PizzaApi.Controllers
             }
         }
 
-        //[HttpPost("enviar")]
         [HttpPost]
         public async Task<IActionResult> Enviar([FromBody] PedidoDto pedidoDto)
         {

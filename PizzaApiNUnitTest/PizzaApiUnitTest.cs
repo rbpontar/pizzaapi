@@ -29,8 +29,13 @@ namespace PizzaApiNUnitTest
             var testServer = new TestServer(new WebHostBuilder().UseStartup<Startup>());
             TestHttpClient = testServer.CreateClient();
 
-            CadastrarPizza();
-            //CadastrarUsuario();
+            CadastrarPizza(new ProdutoDto { Nome = "3 Queijos", Valor = 50 };);
+            CadastrarPizza(new ProdutoDto { Nome = "Frango com Requeijão", Valor = 59.99 };);
+            CadastrarPizza(new ProdutoDto { Nome = "Mussarela", Valor = 42.50 };);
+            CadastrarPizza(new ProdutoDto { Nome = "Calabresa", Valor = 42.50 };);
+            CadastrarPizza(new ProdutoDto { Nome = "Peperoni", Valor = 55 };);
+            CadastrarPizza(new ProdutoDto { Nome = "Portuguesa", Valor = 45 };);
+            CadastrarPizza(new ProdutoDto { Nome = "Verggie", Valor = 59.99 };);
         }
 
         [Test]
@@ -196,11 +201,8 @@ namespace PizzaApiNUnitTest
             Assert.AreNotEqual(0, pedidos.Count);
         }
 
-        //[Test]
-        public void CadastrarPizza()
+        public void CadastrarPizza(ProdutoDto produtoDto)
         {
-            ProdutoDto produtoDto = new ProdutoDto { Nome = "Verggie", Valor = 59.99 };
-
 
             var jsonContent = JsonConvert.SerializeObject(produtoDto);
             var contentString = new StringContent(jsonContent, Encoding.UTF8, "application/json");
@@ -215,7 +217,6 @@ namespace PizzaApiNUnitTest
 
             response = TestHttpClient.PostAsync("api/produto", contentString).Result;
 
-            //Assert.Equals(response.StatusCode, 200);
         }
 
         public int CadastrarUsuario()
@@ -237,9 +238,9 @@ namespace PizzaApiNUnitTest
             var response = TestHttpClient.PostAsync("api/usuario", contentString).Result;
             var resp = response.Content.ReadAsStringAsync().Result;
             var usuarioRespose = JsonConvert.DeserializeObject<Usuario>(resp);
+
             return usuarioRespose.Id;
 
-            //Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);
         }
     }
 }
