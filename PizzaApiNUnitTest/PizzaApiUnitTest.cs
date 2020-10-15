@@ -56,7 +56,6 @@ namespace PizzaApiNUnitTest
 
             Assert.AreEqual("Pedido deve ter no mínimo 1 e no máximo 10 pizzas.",
                 responseData.message);
-
         }
 
         [Test]
@@ -79,7 +78,8 @@ namespace PizzaApiNUnitTest
             PedidoDto pedido = new PedidoDto { IdUsuario = 1 };
 
             var jsonContent = JsonConvert.SerializeObject(pedido);
-            var contentString = new StringContent(jsonContent, Encoding.UTF8, "application/json");
+            var contentString = new StringContent(jsonContent, Encoding.UTF8,
+                "application/json");
 
             var response = TestHttpClient.PostAsync("api/pedido/enviar", contentString).Result;
             var resp = response.Content.ReadAsStringAsync().Result;
@@ -135,9 +135,11 @@ namespace PizzaApiNUnitTest
             };
 
             var jsonContent = JsonConvert.SerializeObject(pedido);
-            var contentString = new StringContent(jsonContent, Encoding.UTF8, "application/json");
+            var contentString = new StringContent(jsonContent, Encoding.UTF8,
+                "application/json");
 
-            var response = TestHttpClient.PostAsync("api/pedido/enviar", contentString).Result;
+            var response = TestHttpClient.PostAsync("api/pedido/enviar",
+                contentString).Result;
             var resp = response.Content.ReadAsStringAsync().Result;
 
             Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);
@@ -160,9 +162,11 @@ namespace PizzaApiNUnitTest
             };
 
             var jsonContent = JsonConvert.SerializeObject(pedido);
-            var contentString = new StringContent(jsonContent, Encoding.UTF8, "application/json");
+            var contentString = new StringContent(jsonContent, Encoding.UTF8,
+                "application/json");
 
-            var response = TestHttpClient.PostAsync("api/pedido/enviar", contentString).Result;
+            var response = TestHttpClient.PostAsync("api/pedido/enviar",
+                contentString).Result;
 
             Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);
         }
@@ -184,9 +188,11 @@ namespace PizzaApiNUnitTest
             };
 
             var jsonContent = JsonConvert.SerializeObject(pedidoDto);
-            var contentString = new StringContent(jsonContent, Encoding.UTF8, "application/json");
+            var contentString = new StringContent(jsonContent, Encoding.UTF8,
+                "application/json");
 
-            var response = TestHttpClient.PostAsync("api/pedido/enviar", contentString).Result;
+            var response = TestHttpClient.PostAsync("api/pedido/enviar",
+                contentString).Result;
             var resp = response.Content.ReadAsStringAsync().Result;
 
             var pedido = JsonConvert.DeserializeObject<Pedido>(resp);
@@ -205,17 +211,21 @@ namespace PizzaApiNUnitTest
         {
 
             var jsonContent = JsonConvert.SerializeObject(produtoDto);
-            var contentString = new StringContent(jsonContent, Encoding.UTF8, "application/json");
+            var contentString = new StringContent(jsonContent, Encoding.UTF8,
+                "application/json");
 
-            var response = TestHttpClient.PostAsync("api/produto", contentString).Result;
+            var response = TestHttpClient.PostAsync("api/produto",
+                contentString).Result;
 
 
             produtoDto = new ProdutoDto { Nome = "Portuguesa", Valor = 45 };
 
             jsonContent = JsonConvert.SerializeObject(produtoDto);
-            contentString = new StringContent(jsonContent, Encoding.UTF8, "application/json");
+            contentString = new StringContent(jsonContent, Encoding.UTF8,
+                "application/json");
 
-            response = TestHttpClient.PostAsync("api/produto", contentString).Result;
+            response = TestHttpClient.PostAsync("api/produto",
+                contentString).Result;
 
         }
 
@@ -233,9 +243,12 @@ namespace PizzaApiNUnitTest
             };
 
             var jsonContent = JsonConvert.SerializeObject(usuario);
-            var contentString = new StringContent(jsonContent, Encoding.UTF8, "application/json");
+            var contentString = new StringContent(jsonContent, Encoding.UTF8,
+                "application/json");
 
-            var response = TestHttpClient.PostAsync("api/usuario", contentString).Result;
+            var response = TestHttpClient.PostAsync("api/usuario",
+                contentString).Result;
+
             var resp = response.Content.ReadAsStringAsync().Result;
             var usuarioRespose = JsonConvert.DeserializeObject<Usuario>(resp);
 
