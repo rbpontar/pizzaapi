@@ -46,9 +46,11 @@ namespace PizzaApiNUnitTest
             PedidoDto pedido = new PedidoDto { IdUsuario = 1 };
 
             var jsonContent = JsonConvert.SerializeObject(pedido);
-            var contentString = new StringContent(jsonContent, Encoding.UTF8, "application/json");
+            var contentString = new StringContent(jsonContent, Encoding.UTF8,
+                "application/json");
 
-            var response = TestHttpClient.PostAsync("api/pedido/enviar", contentString).Result;
+            var response = TestHttpClient.PostAsync("api/pedido/enviar",
+                contentString).Result;
             var resp = response.Content.ReadAsStringAsync().Result;
             var responseData = JsonConvert.DeserializeObject<ErrorMessage>(resp);
 
@@ -81,7 +83,8 @@ namespace PizzaApiNUnitTest
             var contentString = new StringContent(jsonContent, Encoding.UTF8,
                 "application/json");
 
-            var response = TestHttpClient.PostAsync("api/pedido/enviar", contentString).Result;
+            var response = TestHttpClient.PostAsync("api/pedido/enviar",
+                contentString).Result;
             var resp = response.Content.ReadAsStringAsync().Result;
             var responseData = JsonConvert.DeserializeObject<ErrorMessage>(resp);
 
@@ -102,15 +105,18 @@ namespace PizzaApiNUnitTest
             PedidoDto pedido = new PedidoDto { Itens = itens };
 
             var jsonContent = JsonConvert.SerializeObject(pedido);
-            var contentString = new StringContent(jsonContent, Encoding.UTF8, "application/json");
+            var contentString = new StringContent(jsonContent, Encoding.UTF8,
+                "application/json");
 
-            var response = TestHttpClient.PostAsync("api/pedido/enviar", contentString).Result;
+            var response = TestHttpClient.PostAsync("api/pedido/enviar",
+                contentString).Result;
             var resp = response.Content.ReadAsStringAsync().Result;
             var responseData = JsonConvert.DeserializeObject<ErrorMessage>(resp);
 
             Assert.AreEqual(HttpStatusCode.BadRequest, response.StatusCode);
 
-            Assert.AreEqual("Informar os dados da entrega.", responseData.message);
+            Assert.AreEqual("Informar os dados da entrega.",
+                responseData.message);
 
         }
 
