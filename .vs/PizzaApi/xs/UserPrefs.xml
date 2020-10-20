@@ -3,16 +3,16 @@
   <MonoDevelop.Ide.ItemProperties.PizzaApi PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.Workbench ActiveDocument="PizzaApiNUnitTest/PizzaApiUnitTest.cs">
     <Files>
-      <File FileName="PizzaApi/Controllers/PedidoController.cs" Line="44" Column="55" />
+      <File FileName="PizzaApi/Controllers/PedidoController.cs" Line="54" Column="1" />
       <File FileName="PizzaApi/Program.cs" />
       <File FileName="PizzaApi/Services/PedidoService.cs" />
-      <File FileName="PizzaApi/Controllers/UsuarioController.cs" />
+      <File FileName="PizzaApi/Controllers/UsuarioController.cs" Line="38" Column="1" />
       <File FileName="PizzaApi/Dtos/ProdutoDto.cs" />
       <File FileName="PizzaApi/Repositories/PedidoRepo.cs" />
       <File FileName="PizzaApi/Controllers/ProdutoController.cs" Line="27" Column="62" />
       <File FileName="PizzaApi/Services/ProdutoService.cs" />
       <File FileName="PizzaApi/Models/Produto.cs" />
-      <File FileName="PizzaApiNUnitTest/PizzaApiUnitTest.cs" Line="32" Column="30" />
+      <File FileName="PizzaApiNUnitTest/PizzaApiUnitTest.cs" Line="31" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -23,6 +23,17 @@
             </Node>
             <Node name="PizzaApiNUnitTest" expanded="True">
               <Node name="PizzaApiUnitTest.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.UnitTesting.TestPad">
+        <State name="__root__">
+          <Node name="PizzaApi" expanded="True">
+            <Node name="PizzaApiNUnitTest" expanded="True" selected="True">
+              <Node name="PizzaApiNUnitTest" expanded="True">
+                <Node name="Tests" expanded="True" />
+              </Node>
             </Node>
           </Node>
         </State>

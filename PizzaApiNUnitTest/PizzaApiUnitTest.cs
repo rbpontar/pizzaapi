@@ -29,13 +29,13 @@ namespace PizzaApiNUnitTest
             var testServer = new TestServer(new WebHostBuilder().UseStartup<Startup>());
             TestHttpClient = testServer.CreateClient();
 
-            CadastrarPizza(new ProdutoDto { Nome = "3 Queijos", Valor = 50 };);
-            CadastrarPizza(new ProdutoDto { Nome = "Frango com Requeijão", Valor = 59.99 };);
-            CadastrarPizza(new ProdutoDto { Nome = "Mussarela", Valor = 42.50 };);
-            CadastrarPizza(new ProdutoDto { Nome = "Calabresa", Valor = 42.50 };);
-            CadastrarPizza(new ProdutoDto { Nome = "Peperoni", Valor = 55 };);
-            CadastrarPizza(new ProdutoDto { Nome = "Portuguesa", Valor = 45 };);
-            CadastrarPizza(new ProdutoDto { Nome = "Verggie", Valor = 59.99 };);
+            CadastrarPizza(new ProdutoDto { Nome = "3 Queijos", Valor = 50 });
+            CadastrarPizza(new ProdutoDto { Nome = "Frango com Requeijão", Valor = 59.99 });
+            CadastrarPizza(new ProdutoDto { Nome = "Mussarela", Valor = 42.50 });
+            CadastrarPizza(new ProdutoDto { Nome = "Calabresa", Valor = 42.50 });
+            CadastrarPizza(new ProdutoDto { Nome = "Peperoni", Valor = 55 });
+            CadastrarPizza(new ProdutoDto { Nome = "Portuguesa", Valor = 45 });
+            CadastrarPizza(new ProdutoDto { Nome = "Verggie", Valor = 59.99 });
         }
 
         [Test]
